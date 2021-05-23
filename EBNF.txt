@@ -1,0 +1,44 @@
+program ::= {statement} .
+statement ::= formula TERM .
+formula ::= LPAREN formula RPAREN | IF formula THEN formula ELSE formula | sub_formula1 .
+sub_formula1 ::= formula IMPLIES formula | sub_formula2 .
+sub_formula2 ::= formula EQUALS formula | sub_formula3 .
+sub_formula3 ::= formula XOR formula | sub_formula4 .
+sub_formula4 ::= formula OR formula | sub_formula5 .
+sub_formula5 ::= formula AND formula | sub_formula6 .
+sub_formula6 ::= NOT formula | sub_formula7 .
+sub_formula7 ::= CONST | ID .
+ID ::= Alphabet{Alphabet} .
+Alphabet ::= "A" | "B" | "C" | "D" | "E" | "F" | "G"
+       | "H" | "I" | "J" | "K" | "L" | "M" | "N"
+       | "O" | "P" | "Q" | "R" | "S" | "T" | "U"
+       | "V" | "W" | "X" | "Y" | "Z" | "a" | "b"
+       | "c" | "d" | "e" | "f" | "g" | "h" | "i"
+       | "j" | "k" | "l" | "m" | "n" | "o" | "p"
+       | "q" | "r" | "s" | "t" | "u" | "v" | "w"
+       | "x" | "y" | "z" .
+TERM ::= ";" .
+IF ::= "IF" .
+ELSE ::= "ELSE" .
+THEN ::= "THEN" .
+IMPLIES ::= "IMPLIES" .
+EQUALS ::= "EQUALS" .
+OR ::= "OR" .
+XOR ::= "XOR" .
+AND ::= "AND" .
+NOT ::= "NOT" .
+CONST ::= "TRUE" | "FALSE" .
+LPAREN ::= "(" .
+RPAREN ::= ")" .
+
+Note:
+
+1. 	Constants "TRUE" and "FALSE" represents bool 0 and 1 represented by token type CONST.
+2.  "NOT" is a right to left associative prefix unary operator.
+3.  "AND", "OR", "XOR", "EQUALS" have same precedence order and are left to right associative.
+4.  "IMPLIES" is right to left associative implication operator.
+5.  "IF-THEN-ELSE" is a right to left associative operator.
+6.	"LPAREN" and "RPAREN" represents the right and left parenthesis respectively.
+7. "ID" is used for identifiers.
+
+

@@ -1,0 +1,9 @@
+local
+    $(SML_LIB)/basis/basis.mlb
+    $(SML_LIB)/mlyacc-lib/mlyacc-lib.mlb
+    ass.yacc.sig
+    ass.yacc.sml
+    ass.lex.sml
+in
+   load.sml
+end
